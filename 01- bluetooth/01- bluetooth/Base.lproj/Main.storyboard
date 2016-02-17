@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r2G-29-X1R">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEV-nr-giy">
+                                <rect key="frame" x="26" y="520" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="jLS-cx-NMe"/>
+                                    <constraint firstAttribute="width" constant="100" id="zGb-aC-mVJ"/>
+                                </constraints>
+                                <state key="normal" title="建立连接"/>
+                                <connections>
+                                    <action selector="connectMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Wk-VS-uiR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbv-0M-EXP">
+                                <rect key="frame" x="470" y="520" width="100" height="30"/>
+                                <state key="normal" title="发送数据"/>
+                                <connections>
+                                    <action selector="sendMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w1l-Hb-Nr9"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FG8-Av-PDD">
+                                <rect key="frame" x="150" y="40" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.97647064924240112" green="0.32941177487373352" blue="0.12941177189350128" alpha="1" colorSpace="deviceRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="ElD-oj-b4p"/>
+                                    <constraint firstAttribute="width" constant="300" id="NRp-EI-Zl9"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OzL-OR-fqL" appends="YES" id="lKN-hl-dei"/>
+                                    <outletCollection property="gestureRecognizers" destination="OzL-OR-fqL" appends="YES" id="Iwx-qm-nL1"/>
+                                    <outletCollection property="gestureRecognizers" destination="OzL-OR-fqL" appends="YES" id="cVR-Et-3zv"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tbv-0M-EXP" firstAttribute="width" secondItem="gEV-nr-giy" secondAttribute="width" id="6jw-mq-abk"/>
+                            <constraint firstItem="FG8-Av-PDD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="8q4-WW-PWe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gEV-nr-giy" secondAttribute="bottom" constant="50" id="HGw-fV-Tdl"/>
+                            <constraint firstItem="tbv-0M-EXP" firstAttribute="centerY" secondItem="gEV-nr-giy" secondAttribute="centerY" id="Ioy-Mx-fHv"/>
+                            <constraint firstItem="tbv-0M-EXP" firstAttribute="height" secondItem="gEV-nr-giy" secondAttribute="height" id="OLV-5n-Q1N"/>
+                            <constraint firstItem="gEV-nr-giy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="fdO-eH-6EI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tbv-0M-EXP" secondAttribute="trailing" constant="10" id="vjh-da-w90"/>
+                            <constraint firstItem="FG8-Av-PDD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zDa-xU-jth"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectBtn" destination="gEV-nr-giy" id="TJC-eB-kgf"/>
+                        <outlet property="iconView" destination="FG8-Av-PDD" id="kc0-PH-N6f"/>
+                        <outlet property="sendBtn" destination="tbv-0M-EXP" id="9oL-q5-Yv9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OzL-OR-fqL">
+                    <connections>
+                        <action selector="chooseIcon:" destination="BYZ-38-t0r" id="M5N-Ee-Yv7"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1021" y="372"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3EE-iZ-wog">
+            <objects>
+                <viewController id="crW-El-Fp5" customClass="BLEViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8x0-h2-15C"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZbF-o8-9JN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YXK-wy-cYe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izS-jd-RGB">
+                                <rect key="frame" x="40" y="300" width="520" height="30"/>
+                                <color key="backgroundColor" red="0.16862745583057404" green="0.90588241815567017" blue="0.17647059261798859" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="外设管理模式"/>
+                                <connections>
+                                    <action selector="peripheryMethod:" destination="crW-El-Fp5" eventType="touchUpInside" id="MOD-4N-8H8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4U-iK-5C1">
+                                <rect key="frame" x="40" y="120" width="520" height="50"/>
+                                <color key="backgroundColor" red="0.90588241815567017" green="0.32549020648002625" blue="0.56078433990478516" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Df5-Gh-d0E"/>
+                                </constraints>
+                                <state key="normal" title="中心管理模式"/>
+                                <connections>
+                                    <action selector="centralMethod:" destination="crW-El-Fp5" eventType="touchUpInside" id="qd7-m8-kGL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O4U-iK-5C1" firstAttribute="top" secondItem="8x0-h2-15C" secondAttribute="bottom" constant="100" id="FmP-dr-g5D"/>
+                            <constraint firstItem="izS-jd-RGB" firstAttribute="height" secondItem="O4U-iK-5C1" secondAttribute="height" id="Juc-Pb-Kc2"/>
+                            <constraint firstItem="izS-jd-RGB" firstAttribute="centerX" secondItem="O4U-iK-5C1" secondAttribute="centerX" id="WpB-Ir-PjY"/>
+                            <constraint firstItem="O4U-iK-5C1" firstAttribute="leading" secondItem="YXK-wy-cYe" secondAttribute="leadingMargin" constant="20" id="XaJ-YX-o1D"/>
+                            <constraint firstItem="izS-jd-RGB" firstAttribute="width" secondItem="O4U-iK-5C1" secondAttribute="width" id="kU5-YP-uDx"/>
+                            <constraint firstItem="izS-jd-RGB" firstAttribute="top" secondItem="O4U-iK-5C1" secondAttribute="bottom" constant="150" id="rgG-ln-1UR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O4U-iK-5C1" secondAttribute="trailing" constant="20" id="umL-LP-2A0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ygo-KI-yOL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZy-hU-V7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="848" y="828"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gYA-YL-hrO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r2G-29-X1R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="flD-Br-lZn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="crW-El-Fp5" kind="relationship" relationship="rootViewController" id="HwR-ug-wOu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtG-Af-Ede" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="828"/>
+        </scene>
+    </scenes>
+</document>
